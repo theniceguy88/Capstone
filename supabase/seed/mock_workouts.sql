@@ -1,0 +1,2 @@
+-- Future seed data for workouts.
+-- Add rows after the schema is finalized.
