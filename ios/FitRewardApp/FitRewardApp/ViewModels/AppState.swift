@@ -15,6 +15,18 @@ final class AppState: ObservableObject {
         }
     }
 
+    var unlockedRewards: [Reward] {
+        MockDataService.rewards.map { reward in
+            Reward(
+                id: reward.id,
+                title: reward.title,
+                description: reward.description,
+                requiredPoints: reward.requiredPoints,
+                isUnlocked: profile.totalPoints >= reward.requiredPoints
+            )
+        }
+    }
+
     func completeWorkout(_ workout: Workout) {
         let session = WorkoutSession(
             workoutTitle: workout.title,
