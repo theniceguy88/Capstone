@@ -5,15 +5,17 @@ struct RewardsView: View {
 
     var body: some View {
         NavigationStack {
-            List(MockDataService.rewards) { reward in
+            List(appState.unlockedRewards) { reward in
                 HStack(spacing: 14) {
                     Image(systemName: reward.isUnlocked ? "trophy.fill" : "lock.fill")
                         .font(.title2)
+                        .foregroundStyle(reward.isUnlocked ? .yellow : .secondary)
                         .frame(width: 36)
 
                     VStack(alignment: .leading, spacing: 4) {
                         Text(reward.title)
                             .fontWeight(.semibold)
+                            .foregroundStyle(reward.isUnlocked ? .primary : .secondary)
                         Text(reward.description)
                             .font(.caption)
                             .foregroundStyle(.secondary)
@@ -23,6 +25,7 @@ struct RewardsView: View {
                     }
                 }
                 .padding(.vertical, 6)
+                .opacity(reward.isUnlocked ? 1.0 : 0.5)
             }
             .navigationTitle("Rewards")
         }
