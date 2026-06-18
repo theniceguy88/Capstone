@@ -53,8 +53,8 @@ struct MockDataService {
     )
 
     static let rewards: [Reward] = [
-        Reward(title: "First Workout", description: "Complete your first workout.", requiredPoints: 40, isUnlocked: true),
-        Reward(title: "Consistency Starter", description: "Reach 3 workout days.", requiredPoints: 120, isUnlocked: true),
+        Reward(title: "First Workout", description: "Complete your first workout.", requiredPoints: 40, isUnlocked: false),
+        Reward(title: "Consistency Starter", description: "Reach 3 workout days.", requiredPoints: 120, isUnlocked: false),
         Reward(title: "Home Athlete", description: "Reach 500 total points.", requiredPoints: 500, isUnlocked: false)
     ]
 
